@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Black+Ops+One&family=Noto+Sans+Gujarati:wght@100..900&family=Oswald:wght@200..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sekuya&display=swap');
+@import "tailwindcss";
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  html, body, a, button, [role="button"], .cursor-pointer, input, textarea, select {
+    cursor: none !important;
+  }
+}
