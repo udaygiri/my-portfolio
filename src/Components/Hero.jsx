@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import myImage from "../assets/my-image.jpg";
 
 function Hero() {
     // Move inside useMemo or outside the component to satisfy dependency rules
@@ -93,7 +94,7 @@ function Hero() {
                     initial={{ scale: 1.15, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-                    src="src\assets\my-image.jpg"
+                    src={myImage}
                     alt="Hero Image"
                     className="w-full h-full object-cover"
                 />
