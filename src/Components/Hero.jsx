@@ -93,7 +93,7 @@ function Hero() {
                     initial={{ scale: 1.15, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-                    src="image.jpg"
+                    src="src\assets\my-image.jpg"
                     alt="Hero Image"
                     className="w-full h-full object-cover"
                 />
