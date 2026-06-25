@@ -6,7 +6,6 @@ function Experience() {
         {
             role: "Salesforce Trainee",
             company: "LogicRain Technologies Private Limited",
-            logo: "https://media.licdn.com/dms/image/v2/C4D0BAQEYdHTF-A-qgA/company-logo_100_100/company-logo_100_100/0/1651056284285/logicrain_technologies_logo?e=1782345600&v=beta&t=XbYNrTuKzmiioeWVsMHfaovJDcOi8BimbTFAY52UM20",
             location: "Ahmedabad, Gujarat",
             duration: "December 2025 – March 2026",
             achievements: [
@@ -21,7 +20,6 @@ function Experience() {
         {
             role: "Data Science & Machine Learning Intern",
             company: "BrainyBeam Technologies Pvt. Ltd.",
-            logo: "https://media.licdn.com/dms/image/v2/C4D0BAQGahJkPfWKn2w/company-logo_100_100/company-logo_100_100/0/1631330235832?e=1782345600&v=beta&t=3pjSbZSi8Rgwv5L2jj9L_3NVlBL1N-NoCycoMg5Y_To",
             location: "Ahmedabad, Gujarat",
             duration: "January 2024 – February 2024",
             achievements: [
@@ -107,13 +105,6 @@ function Experience() {
                             >
                                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                                     <div className="flex items-start gap-4">
-                                        {exp.logo && (
-                                            <img 
-                                                src={exp.logo} 
-                                                alt={`${exp.company} logo`} 
-                                                className="w-12 h-12 rounded-xl object-cover border border-[#1282A2]/30 shadow-md shrink-0 bg-white"
-                                            />
-                                        )}
                                         <div>
                                             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                                                 <Briefcase className="w-5 h-5 text-[#1282A2] shrink-0" />

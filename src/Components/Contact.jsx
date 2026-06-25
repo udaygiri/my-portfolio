@@ -227,11 +227,8 @@ function Contact() {
                 </motion.div>
 
                 {/* Footer Section */}
-                <div className="border-t border-[#1282A2]/10 pt-8 mt-8 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-400 gap-4">
+                <div className="border-t border-[#1282A2]/10 pt-8 mt-8 flex flex-col sm:flex-row items-center justify-center text-sm text-gray-400 gap-4">
                     <p>© {new Date().getFullYear()} Udaygiri D. Aparnathi. All rights reserved.</p>
-                    <p className="flex items-center gap-1">
-                        Built with React & Framer Motion
-                    </p>
                 </div>
             </div>
         </section>

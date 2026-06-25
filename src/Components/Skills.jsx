@@ -7,7 +7,8 @@ import {
     Cloud,
     ShieldCheck,
     Cpu,
-    Globe
+    Globe,
+    LayoutPanelTop
 } from "lucide-react";
 
 function Skills() {
@@ -16,6 +17,11 @@ function Skills() {
             title: "Programming Languages",
             icon: <Code2 className="w-8 h-8 text-[#1282A2]" />,
             skills: ["Python", "JavaScript", "SQL"]
+        },
+        {
+            title: "Frontend Technologies",
+            icon: <LayoutPanelTop className="w-8 h-8 text-[#1282A2]" />,
+            skills: ["React.js", "Next.js"]
         },
         {
             title: "Backend Technologies",
