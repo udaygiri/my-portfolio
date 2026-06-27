@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import myImage from "../assets/my-image.jpg";
+import Ferrofluid from './Ferrofluid';
+
 
 function Hero() {
     // Move inside useMemo or outside the component to satisfy dependency rules
@@ -32,7 +34,7 @@ function Hero() {
     }, [subIndex, index, reverse, words]); // Added 'words' here
 
     return (
-        <div className="flex flex-col md:flex-row min-h-screen w-full relative">
+        <div id="hero" className="flex flex-col md:flex-row min-h-screen w-full relative">
             {/* Logo/Navbar */}
             <div className="absolute top-4 left-4 z-20 md:left-10">
                 <motion.div 
@@ -46,8 +48,26 @@ function Hero() {
             </div>
 
             {/* Content Section */}
-            <div className="content-section min-h-[60vh] md:h-screen items-center justify-center bg-[#001F54] flex w-full md:w-1/2 pt-24 pb-16 md:py-0">
-                <div className="px-6 sm:px-12 md:pl-20 md:pr-6 w-full">
+            <div className="content-section min-h-[60vh] md:h-screen items-center justify-center bg-black flex w-full md:w-1/2 pt-24 pb-16 md:py-0 relative overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Ferrofluid
+                      colors={["#ffffff", "#ffffff", "#ffffff"]}
+                      speed={0.5}
+                      scale={1}
+                      turbulence={1}
+                      fluidity={0.1}
+                      rimWidth={0.2}
+                      sharpness={3}
+                      shimmer={1}
+                      glow={2}
+                      flowDirection="down"
+                      opacity={1}
+                      mouseInteraction={true}
+                      mouseStrength={1}
+                      mouseRadius={0.3}
+                    />
+                </div>
+                <div className="px-6 sm:px-12 md:pl-20 md:pr-6 w-full relative z-10">
                     <motion.div 
                         initial={{ x: -60, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
@@ -72,7 +92,7 @@ function Hero() {
                         transition={{ duration: 0.5, delay: 0.4 }}
                         className="text-[#FEFCFB] text-xl sm:text-2xl md:text-3xl mt-4 min-h-10 flex items-center"
                     >
-                        <span className="font-mono bg-[#1282A2] text-[#FEFCFB] px-2 py-1 rounded">
+                        <span className="font-mono bg-white text-black px-2 py-1 rounded">
                             {`${words[index].substring(0, subIndex)}${subIndex === words[index].length && !reverse ? "" : "|"}`}
                         </span>
                     </motion.div>

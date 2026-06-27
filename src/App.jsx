@@ -8,8 +8,9 @@ import Projects from "./Components/Projects"
 import Education from "./Components/Education"
 import Certifications from "./Components/Certifications"
 import Contact from "./Components/Contact"
-import Cursor from "./Components/Cursor"
 import Loader from "./Components/Loader"
+import PixelTrail from "./Components/PixelTrail"
+import ClickSpark from "./Components/ClickSpark"
 import { ReactLenis } from 'lenis/react'
 
 
@@ -36,8 +37,23 @@ function App() {
         {isLoading && <Loader onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
       <ReactLenis root>
-        <Cursor />
+        <PixelTrail
+          gridSize={45}
+          trailSize={0.1}
+          maxAge={350}
+          interpolate={5}
+          color="#ffffff"
+          gooeyFilter={{ id: "custom-goo-filter", strength: 2 }}
+        />        
+        <ClickSpark
+          sparkColor='#ffffff'
+          sparkSize={12}
+          sparkRadius={20}
+          sparkCount={10}
+          duration={500}
+        />
         <Hero /> 
+        
         <About /> 
         <Education />
         <Experience /> 
