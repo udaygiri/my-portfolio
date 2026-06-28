@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { CalendarDays, Mic, ListTodo, Download, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 
 const Github = ({ className }) => (

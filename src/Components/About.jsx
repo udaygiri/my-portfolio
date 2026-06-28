@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 
 function About() {
     return (
-        <section className="bg-[#034078] text-[#FEFCFB] min-h-screen flex flex-col justify-center px-4 sm:px-8 md:px-20 lg:px-40">
+        <section id="about" className="bg-[#034078] rounded-t-full text-[#FEFCFB] min-h-screen flex flex-col justify-center px-4 sm:px-8 md:px-20 lg:px-40">
             <motion.h2 
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl md:text-5xl font-bold mb-8 font-[Oswald] tracking-tight"
+                className="text-4xl md:text-5xl font-bold mb-8 mt-[9rem] font-[Oswald]"
             >
                 About Me
             </motion.h2>

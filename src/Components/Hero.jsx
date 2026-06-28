@@ -34,6 +34,7 @@ function Hero() {
     }, [subIndex, index, reverse, words]); // Added 'words' here
 
     return (
+        <div className="sticky -z-1 top-0 w-full">
         <div id="hero" className="flex flex-col md:flex-row min-h-screen w-full relative">
             {/* Logo/Navbar */}
             <div className="absolute top-4 left-4 z-20 md:left-10">
@@ -119,6 +120,7 @@ function Hero() {
                     className="w-full h-full object-cover"
                 />
             </div>
+        </div>
         </div>
     );
 }

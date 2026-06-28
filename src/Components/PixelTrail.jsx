@@ -1,5 +1,5 @@
-/* eslint-disable react/no-unknown-property */
-import { useMemo, useEffect } from 'react';
+
+import { useMemo, useEffect, useState } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { shaderMaterial, useTrailTexture } from '@react-three/drei';
 import * as THREE from 'three';
@@ -89,6 +89,18 @@ function Scene({ gridSize, trailSize, maxAge, interpolate, easingFunction, pixel
 
   useEffect(() => {
     const handlePointerMove = (e) => {
+      // 1. Check if the cursor is above the 'About' section.
+      // Since the Hero section is sticky at the top, it is covered by the 'About' section as we scroll.
+      // Therefore, the visible Hero area is any space above the 'About' section's top boundary.
+      const aboutEl = document.getElementById('about');
+      if (aboutEl) {
+        const aboutRect = aboutEl.getBoundingClientRect();
+        if (e.clientY < aboutRect.top) {
+          return;
+        }
+      }
+
+      // 2. Fallback element-based target check
       const target = e.target;
       const isOverImage = target && (target.tagName === 'IMG' || target.closest('img') || target.closest('.image-section'));
       const isOverHero = target && (target.id === 'hero' || target.closest('#hero'));
@@ -150,6 +162,20 @@ export default function PixelTrail({
   color = '#ffffff',
   className = ''
 }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Checks screen width OR if the device has a touch-only pointer (coarse)
+      setIsMobile(window.innerWidth < 768 || window.matchMedia('(pointer: coarse)').matches);
+    };
+    handleResize(); // run on mount
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  if (isMobile) return null;
+
   return (
     <>
       {gooeyFilter && <GooeyFilter id={gooeyFilter.id} strength={gooeyFilter.strength} />}
